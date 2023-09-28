@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About - {% endblock %}
+{% block content %}
+
+
+<div class="about card border-0 mt-3" data-bs-theme="dark">
+    <h2 class="card-header border-0 text-center">ANDY</h2>
+    <div class="card-body">
+        <p class="aboutP">
+            <img class="aboutImg" src="{% static 'SNERDY_SHOOTS_about.jpg' %}" alt="Description of the image">
+            Hi, I’m Andy. I’m a programmer that shoots all the experiences worth capturing. Whether it’s professional headshots, portraits of family or pets, events like parties, birthdays, showers, or even food, landscapes, or products, I shoot it all. As a nerd by nature, my whole methodology is technical: from capturing the stills to the editing process. This lean framework to my process yields a natural final image that is beautiful, clean, and simple. Perfect for displaying and reliving life’s finest moments. 
+        </p>
+        <h6><strong>FUN FACT:</strong>
+            I scratch-coded this site; for the source code, click the <a href="https://emojipedia.org/grinning-cat-with-smiling-eyes">grinning cat</a> to the left. 👈
+        </h6>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}SNERDY SHOOTS</title>
+        {% comment %}
+        <meta name="description" content="{% block meta %}{% autoescape off %}{{ site.meta_description }}{% endautoescape %}{% endblock %}">
+        <link rel="canonical" href="{{ request.build_absolute_uri }}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+        {% endcomment %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel ="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+
+    <body>
+
+        <div class="container-lg">
+        <div class="row">
+            
+            
+    <!-- NAVIGATION -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                {% comment %}
+                <a class="navbar-brand" href="{% url 'photography:home' %}">📷 SNERDY SHOOTS</a>
+                {% endcomment %}
+                <a class="navbar-brand" href="{% url 'home' %}">📷 SNERDY SHOOTS</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://www.instagram.com/slimsnerdy/">
+                            <!-- <img src="static/Instagram_Glyph_White.png" alt="ig_logo"> -->
+                            <img src="{% static 'Instagram_Glyph_White.png' %}" alt="ig_logo">
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+
+        {% include 'messages.html' %}
+
+
+        <div class="sidebar col-2 offcanvas-lg offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">👇</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+            </div>
+            <!-- the sidebar -->
+            <div class="offcanvas-body justify-content-center">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">GALLERY 🚧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+                    </li>
+                    <li class="nav-item">                        
+                        <a class="nav-link" href="{% url 'about' %}">ABOUT</a>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/slimsnerdy/snerdy_shoots">😸</a> <!-- GITHUB LINK -->
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="main col">
+            {% block content %}
+            <!-- Content Goes here -->
+            {% endblock content %}
+        </div>
+
+
+    <!-- FOOTER -->
+    <footer class="py-3">
+        <!-- <p class="m-0 text-center">&copy; 2023 Snerdy Shoots | 🦅 <img src="static/usa_flag.svg" class="USA" alt="USA Flag" height="16px" style="vertical-align: baseline;"></p> -->
+        <p class="m-0 text-center">&copy; {% now "Y" %} Snerdy Shoots | 🦅 <img src="{% static 'usa_flag.svg' %}" class="USA" alt="USA Flag" height="16px" style="vertical-align: baseline;"></p>
+    </footer>
+
+
+        </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="{% static 'javascript/scripts.js' %}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,242 @@
+/* Custom styles for elements with data-bs-theme=dark */
+[data-bs-theme=dark] {
+    /* Override the --bs-body-bg variable */
+    --bs-body-color-rgb: rgba(33, 37, 41, 0.64);
+    --bs-body-bg: rgba(33, 37, 41, 0.64); /* Example background color for dark theme */
+  }
+
+@font-face {
+    font-family: "Kabala-ExtBld";
+    src: url("fonts/Kabala-ExtBld.woff");
+}
+
+@font-face {
+    font-family: "Kabala";
+    src: url("fonts/Kabala.woff");
+}
+
+
+/* IMPORTANTS ARE HACKY THO */
+/* less than 1200px */
+@media (max-width: 1200px) { /* needed for collapsing sidebar on resize AREGDOM*/
+    .bannerH1 {
+        font-size: 2.5em!important;
+    }
+}
+/* less than 768px */
+@media (max-width: 1024px) { /* needed for collapsing sidebar on resize */
+    .bannerH1 {
+        font-size: 2.9em!important;
+    }
+}
+/* less than 768px */
+@media (max-width: 768px) { /* needed for collapsing sidebar on resize */
+    .bannerH1 {
+        font-size: 2.0em!important;
+        letter-spacing: -3px!important;
+    }
+}
+/* less than 428px iPhone 12 Pro Max ALEX */
+@media (max-width: 428px) {
+    .aboutImg {
+        /* float: none!important; */
+        width: 100%;
+        /* height: auto!important; */
+        object-fit: cover;
+    }
+    .bannerH1 {
+        font-size: 1.25em!important;
+        letter-spacing: -2px!important;
+    }
+    .aboutP {
+        font-size: .82em!important;
+    }
+}
+/* less than 320px */
+@media (max-width: 320px) {
+    .aboutP {
+        font-size: .72em!important;
+    }
+}
+
+
+@media (min-width: 992px) { /* needed for collapsing sidebar on resize */
+    .sidebar {
+        /* background-color: rgba(33, 37, 41, 0.92); */
+        position: sticky;
+        top: 56px;
+        height: 100%;
+        border-bottom-right-radius: 0.64rem;
+    }
+}
+
+
+#offcanvasResponsive {  /* needed for customizing default Offcanvas Bootstrap sidebar component */
+    width: auto;
+    bottom: unset;
+    background-color: RGBA(var(--bs-dark-rgb),var(--bs-bg-opacity,.86))!important;
+    border-bottom-right-radius: 0.64rem;
+}    
+
+body {
+    background-color: black;
+    /* font-family: "Cardo"; */
+    font-family: "Kabala";
+    font-size: 23px;
+}
+
+.container-lg {
+    background-image: url("Yosemite_Milky_Way_galaxy.jpg");
+    /* background-position: center center; */
+    border-bottom-left-radius: 0.64rem;
+    border-bottom-right-radius: 0.64rem;
+    height: 1200px;
+    position: relative; /* got the footer working */
+}
+
+
+@media (min-width: 425px) {
+    .navbar {
+        background-color: rgba(33, 37, 41, 0.92)!important;
+        padding: 0;
+    }
+}
+
+
+.navbar-brand {
+    font-size: 30px;
+    /* padding: 0; */
+    margin-left: 16px!important;
+}
+
+/* .navbar-nav .nav-link {
+    padding:0;
+} */
+
+/* IG LOGO */
+.navbar-nav .nav-item img {
+    /* padding:0; */
+    height: 40px;
+}
+
+.offcanvas-body .nav-link {
+    color: rgba(161, 189, 255, 0.96)!important;
+    /* color:rgba(0, 166, 255, 0.772)!important; */
+}
+
+.nav-link:hover {
+    /* color: #ff9900!important; Change to the color you prefer on hover */
+    color: ivory!important;
+    /* color: darkviolet!important; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bannerH1 {
+    /* color: rgba(151, 81, 206, 1);  */
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: -5px;
+    margin-top: 8px!important;
+    font-family: "Kabala-ExtBld";
+}
+
+/* BLACK SABBATH */
+.shoot {
+    /* color: violet; */
+    color: darkviolet;
+}
+
+/* MASTER OF REALITY */
+.stars {
+    color: ivory;
+}
+
+.carousel-item img {
+    border-radius: 0.64rem;
+}
+
+footer {
+    position: absolute; 
+    bottom: 0; 
+}
+
+footer p {
+    /* position: absolute;
+    bottom: 0; 
+    width: 100%; */
+    color:rgba(200, 221, 254, 0.96); 
+}
+
+/* FORM */
+#id_captcha_1 {
+    margin-left: 16px!important;
+    margin-right: 16px!important;
+}
+
+.form .card-body {
+    padding-bottom: 0px; 
+    padding-top: 0px;
+}
+
+.form .form-actions .d-flex {
+    margin-bottom: 1rem;
+}
+
+.form .btn {
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    margin-bottom: 16px !important;
+}
+
+/* ABOUT */
+.about .card-body {
+    padding-bottom: 0px; padding-top: 0px;
+}
+
+.about p {
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+  }
+
+.aboutImg {
+    float: right; 
+    height: 364px; 
+    margin-left: 16px; 
+    margin-bottom: 16px; 
+    border-top-left-radius: 0.64rem; 
+    border-top-right-radius: 0.64rem; 
+    border-bottom-left-radius: 0.64rem;
+}

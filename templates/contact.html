@@ -1,0 +1,77 @@
+{% extends 'base.html' %} 
+{% block title %}Contact - {% endblock %}
+{% block content %}
+
+
+<div class="form mt-3" data-bs-theme="dark">
+<div class="card border-0">
+    <h5 class="card-header border-0 text-center">Contact</h5>
+    <div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" style="text-align: left; margin-bottom: 1rem;">{{ error }}</div>
+        {% endfor %}
+        <div class="row">
+            <div class="col">
+                {% for error in form.first_name.errors %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+                    <p>{{ form.first_name }}</p>
+            </div>
+            <div class="col">
+                {% for error in form.last_name.errors %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+                    <p>{{ form.last_name }}</p>
+            </div>
+        </div>
+        <!-- <span> -->
+            {% for error in form.from_email.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+                <p>{{ form.from_email }}</p>
+            {% for error in form.subject.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+                <p>{{ form.subject }}</p>
+            {% for error in form.message.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+                <p>{{ form.message }}</p>         
+        <!-- </span> -->
+        <div class="row">
+        <div class="col-md">
+            {% for error in form.instagram.errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+                <p>{{ form.instagram }}</p>   
+        </div>
+        <div class="col">
+            <div class="form-actions d-flex justify-content-end">
+                <div class="d-flex align-items-center">
+                    {{ form.captcha }} 
+                </div>
+                <button type="submit" class="btn btn-dark">Send</button>
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <!-- YOUR ARE A BOT ERROR MESSAGE -->
+    {% for error in form.captcha.errors %}
+       <span class="alertCaptcha alert-danger" style="color: indianred; float: right;">try again 🫥</span>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+
+{% comment %}
+{% if form.captcha.errors %}
+    <div class="alert alert-danger">{{ form.captcha.errors }}</div>
+{% endif %}
+{% endcomment %}
+
+
+{% endblock content %}
